@@ -1,0 +1,120 @@
+:root {
+  --bg: #0a1020;
+  --sidebar: #8b97ad;
+  --footer: #3b4863;
+  --text: #ffffff;
+  --label: #cfd8ea;
+  --line: #2a3550;
+  --accent: #5b8cff;
+  --danger: #ff5b6b;
+  --card: #111a31;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.layout { flex: 1; display: flex; }
+
+/* Barra lateral */
+.sidebar {
+  width: 56px;
+  background: var(--sidebar);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding-top: 14px;
+}
+.sidebar a {
+  color: #0a1020;
+  display: flex;
+  padding: 6px;
+  border-radius: 8px;
+  opacity: .75;
+  transition: .15s;
+}
+.sidebar a:hover, .sidebar a.active { opacity: 1; background: rgba(255,255,255,.35); }
+.sidebar svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Ícones em imagem: tamanho fixo, sem distorcer, qualquer formato de arquivo */
+.sidebar img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
+main { flex: 1; padding: 20px 16px 60px; }
+.container { max-width: 760px; margin: 0 auto; }
+h1 { text-align: center; font-size: 1.6rem; font-weight: 700; margin-bottom: 24px; }
+
+.toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; font-size: .85rem; color: var(--label); }
+
+/* Lista de cartões */
+.item { border-bottom: 1px solid var(--line); padding: 14px 4px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.field { margin-bottom: 8px; }
+.field:last-child { margin-bottom: 0; }
+.field small { display: block; font-size: .72rem; color: var(--label); font-weight: 500; }
+.field span { font-size: .9rem; font-weight: 600; word-break: break-word; }
+.info { flex: 1; min-width: 0; }
+.actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  font-size: .78rem;
+  padding: 7px 14px;
+  border-radius: 8px;
+  transition: .15s;
+}
+button:hover { background: var(--card); border-color: var(--accent); }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button.primary:hover { filter: brightness(1.1); }
+button.danger:hover { border-color: var(--danger); color: var(--danger); }
+
+input[type="text"] {
+  font-family: inherit;
+  width: 100%;
+  max-width: 320px;
+  background: var(--card);
+  border: 1px solid var(--accent);
+  color: var(--text);
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: .9rem;
+  outline: none;
+}
+.empty { text-align: center; color: var(--label); padding: 40px 0; font-size: .9rem; }
+
+/* Modal de exclusão */
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); display: none; align-items: center; justify-content: center; padding: 16px; z-index: 10; }
+.overlay.open { display: flex; }
+.modal { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; max-width: 380px; width: 100%; }
+.modal h2 { font-size: 1.05rem; margin-bottom: 8px; }
+.modal p { font-size: .85rem; color: var(--label); margin-bottom: 18px; }
+.modal .row { display: flex; gap: 8px; justify-content: flex-end; }
+.modal button.confirm { background: var(--danger); border-color: var(--danger); color: #fff; }
+
+/* Rodapé */
+footer { background: var(--footer); padding: 20px 100px; display: flex; justify-content: space-between; align-items: flex-end; font-size: .72rem; }
+footer .left { display: flex; gap: 14px; align-items: center; }
+footer .left svg { width: 26px; height: 26px; stroke: #0a1020; fill: none; stroke-width: 1.8; }
+footer .links a { display: block; color: var(--text); text-decoration: none; margin: 2px 0; }
+footer .right { text-align: right; }
+footer .right strong { display: block; margin-bottom: 4px; }
+footer .right a { color: #fff; text-decoration: none; }
+footer .copy { font-size: .6rem; color: var(--label); margin-top: 6px; }
+
+@media (max-width: 640px) {
+  footer { padding: 16px; flex-direction: column; align-items: flex-start; gap: 12px; }
+  footer .right { text-align: left; }
+  .item { flex-direction: column; align-items: flex-start; }
+}

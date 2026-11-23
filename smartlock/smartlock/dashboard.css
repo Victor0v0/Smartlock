@@ -1,0 +1,515 @@
+
+/* ========================================
+   GENERAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #0b1221;
+    --sidebar: #8994a8;
+    --footer: #394762;
+    --text: #f7f8fc;
+    --muted: #cbd3e1;
+    --chart-background: #f7f7f7;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 55px;
+    height: 100vh;
+
+    background-color: var(--sidebar);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 12px 0;
+    gap: 25px;
+
+    z-index: 10;
+}
+
+.side-icon {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #080e19;
+    text-decoration: none;
+}
+
+.side-icon img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.side-icon svg {
+    width: 21px;
+    height: 21px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.side-icon:hover {
+    opacity: 0.65;
+}
+
+.side-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.settings-icon {
+    margin-top: auto;
+}
+
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+.main-content {
+    flex: 1;
+
+    margin-left: 55px;
+
+    padding: 5px 30px 60px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.page-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.dashboard-message {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 12px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.dashboard-message:empty {
+    display: none;
+}
+
+.dashboard-message.is-error {
+    color: #ffb7bd;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 24px;
+}
+
+.summary-card {
+    min-width: 0;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(203, 211, 225, 0.18);
+    border-radius: 8px;
+}
+
+.summary-card h2 {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.summary-value {
+    margin-top: 5px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   DASHBOARD
+======================================== */
+
+.dashboard-content {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+.section-heading {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/* ========================================
+   GRAPH
+======================================== */
+
+.chart-container {
+    position: relative;
+
+    width: 100%;
+    height: 320px;
+
+    padding: 15px;
+
+    background-color: var(--chart-background);
+    border-radius: 14px;
+}
+
+
+/* ========================================
+   ACCESS LIST
+======================================== */
+
+.access-section {
+    margin-top: 28px;
+}
+
+.access-empty {
+    padding: 24px 0;
+    color: var(--muted);
+    text-align: center;
+}
+
+.access-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    padding: 0 6px;
+}
+
+.access-card {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid rgba(203, 211, 225, 0.2);
+}
+
+.information-item {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.information-label {
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.information-value {
+    color: var(--text);
+    overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+    min-height: 160px;
+
+    margin-left: 55px;
+
+    background-color: var(--footer);
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    padding: 20px 5%;
+    gap: 18px;
+}
+
+
+/* LOGO */
+
+.footer-brand img {
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+}
+
+
+/* NAVIGATION */
+
+.footer-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.footer-navigation a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-navigation a:hover,
+.footer-support a:hover {
+    text-decoration: underline;
+}
+
+
+/* SUPPORT */
+
+.footer-support {
+    margin-left: auto;
+    margin-right: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 8px;
+
+    text-align: right;
+}
+
+.footer-support strong {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.footer-support a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+/* COPYRIGHT */
+
+.footer-copyright {
+    position: absolute;
+
+    right: 5%;
+    bottom: 12px;
+
+    color: var(--muted);
+    font-size: 12px;
+    text-align: right;
+}
+
+
+/* ========================================
+   RESPONSIVENESS - TABLETS AND DESKTOPS
+======================================== */
+
+@media (min-width: 768px) {
+
+    .main-content {
+        padding: 15px 50px 70px;
+    }
+
+    .page-header h1 {
+        font-size: 36px;
+    }
+
+    .chart-container {
+        height: 360px;
+    }
+
+    .access-section {
+        margin-top: 35px;
+    }
+
+    .information-item {
+        font-size: 15px;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVENESS - MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .main-content {
+        padding: 10px 15px 50px;
+    }
+
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .summary-card {
+        padding: 12px;
+    }
+
+    .summary-card h2 {
+        font-size: 12px;
+    }
+
+    .summary-value {
+        font-size: 22px;
+    }
+
+    .section-heading {
+        font-size: 16px;
+    }
+
+    .chart-container {
+        height: 280px;
+        padding: 10px;
+    }
+
+    .access-section {
+        margin-top: 24px;
+    }
+
+    .information-item {
+        font-size: 13px;
+    }
+
+
+    /* FOOTER MOBILE */
+
+    .footer {
+        min-height: 160px;
+
+        padding: 20px 15px;
+
+        gap: 10px;
+    }
+
+    .footer-brand img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .footer-navigation a {
+        font-size: 10px;
+    }
+
+    .footer-support {
+        gap: 6px;
+    }
+
+    .footer-support strong {
+        font-size: 12px;
+    }
+
+    .footer-support a {
+        font-size: 10px;
+    }
+
+    .footer-copyright {
+        right: 15px;
+        bottom: 10px;
+
+        font-size: 9px;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVENESS - SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+
+    .sidebar {
+        width: 45px;
+    }
+
+    .main-content {
+        margin-left: 45px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .footer {
+        margin-left: 45px;
+
+        min-height: 150px;
+
+        padding: 15px 10px;
+    }
+
+    .footer-brand img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .footer-navigation a {
+        font-size: 9px;
+    }
+
+    .footer-support a {
+        font-size: 8px;
+    }
+
+    .footer-copyright {
+        font-size: 7px;
+        right: 10px;
+    }
+
+    .chart-container {
+        height: 240px;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+}

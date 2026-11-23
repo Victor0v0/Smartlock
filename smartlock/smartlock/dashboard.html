@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Dashboard SmartLock - Monitoramento de acessos.">
+
+    <title>Dashboard | SmartLock</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Fonte Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Biblioteca Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- BARRA LATERAL -->
+
+    <aside class="sidebar">
+
+        <a href="index.html" class="side-icon" title="SmartLock">
+            <img src="img/logo.png" alt="SmartLock">
+        </a>
+
+        <nav class="side-navigation">
+
+            <!-- Dashboard -->
+            <a href="dashboard.html" class="side-icon active" title="Dashboard">
+                <img src="img/dashboard.png">
+            </a>
+
+            <!-- Cartões -->
+            <a href="cartoes.html" class="side-icon" title="Cartões">
+                <img src="img/cartao.png">
+            </a>
+
+        </nav>
+
+        <!-- Configurações -->
+        <a href="#" class="side-icon settings-icon" title="Configurações">
+
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.8 1.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5v.1h-2.6v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1-1.8-1.8.1-.1A1.7 1.7 0 0 0 8 15a1.7 1.7 0 0 0-1.5-1H6.4v-2.6h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1 1.8-1.8.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5v-.1H15v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1 1.8 1.8-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1h.1V14h-.1a1.7 1.7 0 0 0-1.5 1z"/>
+            </svg>
+
+        </a>
+
+    </aside>
+
+
+    <!-- maincontetn -->
+
+    <main class="main-content">
+
+        <header class="page-header">
+            <h1>DashBoard</h1>
+        </header>
+
+        <p class="dashboard-message" id="dashboard-message" role="status" aria-live="polite"></p>
+
+        <section class="summary-grid" aria-label="Resumo do sistema">
+            <article class="summary-card">
+                <h2>Usuários</h2>
+                <p class="summary-value" id="total-usuarios" aria-live="polite">--</p>
+            </article>
+            <article class="summary-card">
+                <h2>Cartões cadastrados</h2>
+                <p class="summary-value" id="total-cartoes" aria-live="polite">--</p>
+            </article>
+            <article class="summary-card">
+                <h2>Cartões ativos</h2>
+                <p class="summary-value" id="cartoes-ativos" aria-live="polite">--</p>
+            </article>
+            <article class="summary-card">
+                <h2>Cartões inativos</h2>
+                <p class="summary-value" id="cartoes-inativos" aria-live="polite">--</p>
+            </article>
+            <article class="summary-card">
+                <h2>Acessos autorizados</h2>
+                <p class="summary-value" id="acessos-autorizados" aria-live="polite">--</p>
+            </article>
+            <article class="summary-card">
+                <h2>Acessos negados</h2>
+                <p class="summary-value" id="acessos-negados" aria-live="polite">--</p>
+            </article>
+        </section>
+
+        <!-- acessgraph -->
+
+        <section class="dashboard-content">
+
+            <h2 class="section-heading">Acessos nos últimos 7 dias</h2>
+            <div class="chart-container">
+                <canvas id="accessChart"></canvas>
+            </div>
+
+
+            <!-- acesslist -->
+
+            <section class="access-section">
+                <h2 class="section-heading">Últimos 10 acessos</h2>
+
+                <div class="access-list" id="access-list">
+
+                    <!-- Os registros serão inseridos pelo JavaScript -->
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+            <img src="img/logo.png" alt="Logo SmartLock">
+        </div>
+
+        <nav class="footer-navigation">
+            <a href="index.html#inicio">Home</a>
+            <a href="index.html#sobre">Sobre nós</a>
+            <a href="cadastro.html">Meu SmartLock</a>
+        </nav>
+
+        <div class="footer-support">
+            <strong>SUPORTE</strong>
+
+            <a href="mailto:suportesmartlock@gmail.com">
+                suportesmartlock@gmail.com
+            </a>
+        </div>
+
+        <div class="footer-copyright">
+            © 2026 SmartLock. Todos os direitos reservados.
+        </div>
+
+    </footer>
+
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

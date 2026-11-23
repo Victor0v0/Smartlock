@@ -1,0 +1,403 @@
+
+/* geral */
+
+:root {
+    --background: #0b1221;
+    --surface: #394762;
+    --text: #f7f8fc;
+    --muted: #cbd3e1;
+    --input-background: #f7f7f8;
+    --input-text: #202633;
+    --button: #8993a5;
+    --button-hover: #aab4c5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    background: var(--background);
+    color: var(--text);
+
+    font-family: "Poppins", sans-serif;
+    zoom: 1.25;
+}
+
+
+/* header */
+
+.topbar {
+    width: 100%;
+    min-height: 66px;
+    padding: 0 4.5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: var(--surface);
+}
+
+.brand {
+    width: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.brand img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+
+    gap: clamp(28px, 7vw, 88px);
+    margin-right: 5%;
+}
+
+.main-nav a,
+.footer-nav a {
+    color: var(--text);
+    text-decoration: none;
+
+    transition: opacity 0.2s ease;
+}
+
+.main-nav a {
+    font-size: 13px;
+}
+
+.main-nav a:hover,
+.main-nav a.active,
+.footer-nav a:hover {
+    opacity: 0.7;
+}
+
+
+/* content */
+
+.main-content {
+    width: 100%;
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 68px 22px 80px;
+}
+
+.registration {
+    width: min(100%, 485px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.registration h1 {
+    margin-bottom: 30px;
+
+    font-size: clamp(26px, 4vw, 32px);
+    line-height: 1.3;
+    font-weight: 400;
+}
+
+
+/* form */
+
+.registration-form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 21px;
+}
+
+.registration-form input {
+    width: 100%;
+    height: 51px;
+
+    padding: 0 22px;
+
+    border: 2px solid transparent;
+    border-radius: 28px;
+    outline: none;
+
+    background: var(--input-background);
+    color: var(--input-text);
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.registration-form input::placeholder {
+    color: #858585;
+}
+
+.registration-form input:focus {
+    border-color: var(--button);
+    box-shadow: 0 0 0 3px rgba(137, 147, 165, 0.2);
+}
+
+
+/* btn */
+
+.registration-form button {
+    width: 180px;
+    min-height: 42px;
+
+    margin-top: 16px;
+
+    border: none;
+    border-radius: 24px;
+
+    background: var(--button);
+    color: #080e19;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease,
+                transform 0.2s ease;
+}
+
+.registration-form button:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+
+/* msg grom */
+
+.form-message {
+    min-height: 20px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+
+/* acessibilidade */
+
+.sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* footer */
+
+.footer {
+    position: relative;
+
+    width: 100%;
+    min-height: 153px;
+
+    padding: 20px 4.5% 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    background: var(--surface);
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.footer-brand {
+    width: 48px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 3px;
+}
+
+.footer-nav a {
+    font-size: 13px;
+}
+
+
+/* suporte */
+
+.support {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 4px;
+
+    font-size: 13px;
+}
+
+.support strong {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.support a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.support a:hover {
+    text-decoration: underline;
+}
+
+
+/* copyrith */
+
+.copyright {
+    position: absolute;
+
+    right: 4.5%;
+    bottom: 8px;
+
+    color: var(--muted);
+    font-size: 9px;
+}
+
+
+/* responsividade */
+
+@media (max-width: 600px) {
+
+    .topbar {
+        min-height: 60px;
+        padding: 0 18px;
+    }
+
+    .brand {
+        width: 32px;
+    }
+
+    .main-nav {
+        gap: 16px;
+        margin-right: 0;
+    }
+
+    .main-nav a {
+        font-size: 10px;
+    }
+
+    .main-content {
+        padding: 55px 22px 70px;
+    }
+
+    .registration h1 {
+        margin-bottom: 25px;
+    }
+
+    .registration-form input {
+        height: 49px;
+        font-size: 13px;
+    }
+
+    .footer {
+        min-height: 130px;
+        padding: 18px 18px 30px;
+    }
+
+    .footer-left {
+        gap: 14px;
+    }
+
+    .footer-brand {
+        width: 36px;
+    }
+
+    .footer-nav a,
+    .support {
+        font-size: 10px;
+    }
+
+    .support strong {
+        font-size: 10px;
+    }
+
+    .copyright {
+        right: 18px;
+        font-size: 7px;
+    }
+}
+
+
+@media (max-width: 380px) {
+
+    .main-nav {
+        gap: 10px;
+    }
+
+    .main-nav a {
+        font-size: 9px;
+    }
+
+    .footer {
+        gap: 10px;
+    }
+
+    .support {
+        max-width: 145px;
+        overflow-wrap: anywhere;
+    }
+
+}
+
+
+.form-message {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    min-height: 1.4em;
+}
+.form-message[data-tipo="sucesso"] { color: #16803c; }
+.form-message[data-tipo="erro"] { color: #c62828; }
+.registration-form button:disabled { opacity: .65; cursor: wait; }

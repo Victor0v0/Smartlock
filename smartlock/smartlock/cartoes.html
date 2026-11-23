@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cartões - SmartLock</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cartoes.css">
+</head>
+<body>
+  <div class="layout">
+    <nav class="sidebar">
+      <a href="index.html" title="Home">
+        <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+      </a>
+      <a href="dashboard.html" title="Dashboard">
+        <img src="img/dashboard.png" alt="Dashboard">
+      </a>
+      <a href="cartoes.html" class="active" title="Cartões">
+        <img src="img/cartao.png" alt="Cartões">
+      </a>
+    </nav>
+
+    <main>
+      <div class="container">
+        <h1>Cartões</h1>
+        <div class="toolbar"><span id="contador"></span></div>
+        <div id="lista"></div>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <div class="left">
+      <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2" fill="#0a1020"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="meu-smartlock.html">Meu SmartLock</a>
+      </div>
+    </div>
+    <div class="right">
+      <strong>SUPORTE</strong>
+      <a href="mailto:suportesmartlock@gmail.com">suportesmartlock@gmail.com</a>
+      <div class="copy">© 2026 SmartLock. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <h2>Excluir cartão?</h2>
+      <p id="modalTexto"></p>
+      <div class="row">
+        <button id="cancelar">Cancelar</button>
+        <button class="confirm" id="confirmar">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="cartoes.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <a class="brand" href="index.html" aria-label="SmartLock - início">
+            <img src="img/logo.png" alt="Logo SmartLock">
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html#inicio">Home</a>
+            <a href="index.html#sobre">Sobre nós</a>
+            <a href="cadastro.html" class="active">Cadastro</a>
+            <a href="dashboard.html">Painel</a>
+        </nav>
+
+    </header>
+
+    <main class="main-content">
+
+        <section class="registration">
+
+            <h1>Cadastrar Cartão</h1>
+
+            <form class="registration-form" id="registration-form">
+
+                <label class="sr-only" for="rfid">
+                    ID do RFID
+                </label>
+
+                <input
+                    type="text"
+                    id="rfid"
+                    name="rfid"
+                    placeholder="ID do RFID"
+                    maxlength="64"
+                    autocomplete="off"
+                    required
+                >
+
+                <label class="sr-only" for="nome">
+                    Nome de Usuário
+                </label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Nome de Usuário"
+                    maxlength="100"
+                    autocomplete="name"
+                    required
+                >
+
+                <button type="submit">
+                    Cadastrar
+                </button>
+
+                <p class="form-message" id="form-message" aria-live="polite"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="footer-left">
+
+            <a class="brand footer-brand" href="index.html" aria-label="Voltar para o início">
+                <img src="img/logo.png" alt="Logo SmartLock">
+            </a>
+
+            <nav class="footer-nav">
+                <a href="index.html#inicio">Home</a>
+                <a href="index.html#sobre">Sobre nós</a>
+                <a href="cadastro.html">Cadastro</a>
+            </nav>
+
+        </div>
+
+
+        <div class="support">
+
+            <strong>SUPORTE</strong>
+
+            <a href="mailto:suportesmartlock@gmail.com">
+                suportesmartlock@gmail.com
+            </a>
+
+        </div>
+
+
+        <p class="copyright">
+            © 2026 SmartLock. Todos os direitos reservados.
+        </p>
+
+    </footer>
+    <script src="cadastro.js" defer></script>
+</body>
+</html>
